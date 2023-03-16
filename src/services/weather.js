@@ -14,13 +14,15 @@ export async function weatherData() {
     const { location, current } = data
     const { condition, feelslike_c, temp_c
     } = current
-    const { name } = location
+    const { name, region, country } = location
     const { icon, text } = condition
     return {
         src: icon,
         temperatura: temp_c,
         sensacion: feelslike_c,
         ciudad: name,
+        region: region,
+        country: country,
         text: text
     }
 }

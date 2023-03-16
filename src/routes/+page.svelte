@@ -5,7 +5,11 @@
 
 {#await weatherPromise then weather}
 	<section>
-		<h1>{weather.ciudad}</h1>
+		<div class="place">
+			<h1>{weather.ciudad}</h1>
+			<h6>{weather.region}, {weather.country}</h6>
+		</div>
+
 		<div class="temp">
 			<h4>Temperatura</h4>
 			<h2>{weather.temperatura}</h2>
@@ -39,6 +43,11 @@
 			rgba(0, 251, 248, 1) 100%
 		);
 	}
+	.place {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 	.temp {
 		display: flex;
 		justify-content: space-around;
@@ -57,6 +66,12 @@
 		width: 80%;
 		display: flex;
 		align-items: center;
-		justify-content: flex-end;
+		justify-content: center;
+	}
+	h1 {
+		margin-bottom: 1%;
+	}
+	h6 {
+		margin-top: 1%;
 	}
 </style>
