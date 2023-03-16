@@ -20,6 +20,7 @@
 	section {
 		max-width: 600px;
 		width: 80%;
+		margin: auto;
 		padding: 15px;
 		display: flex;
 		flex-direction: column;
