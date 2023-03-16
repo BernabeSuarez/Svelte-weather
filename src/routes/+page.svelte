@@ -12,7 +12,10 @@
 			<h4>Sensacion Termica</h4>
 			<h2>{weather.sensacion}°</h2>
 		</div>
-		<img src={weather.src} alt="Icono" />
+		<div class="icon">
+			<h3>{weather.text}</h3>
+			<img src={weather.src} alt="Icono" />
+		</div>
 	</section>
 {/await}
 
@@ -46,5 +49,14 @@
 	}
 	h4 {
 		margin: 0 5%;
+	}
+	h3 {
+		font-style: oblique;
+	}
+	.icon {
+		width: 80%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 	}
 </style>
