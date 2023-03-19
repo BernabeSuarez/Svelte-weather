@@ -1,6 +1,6 @@
 <script>
 	import { weatherData } from '../services/weather';
-	let value = 'Buenos aires';
+	let value = '';
 	let weatherPromise = {};
 	const handleInput = (e) => (value = e.target.value);
 
@@ -14,7 +14,7 @@
 	<input placeholder="Buscar ciudad" on:change={handleInput} />
 	<button on:click={renderData}>Buscar</button>
 	{#if value.length < 2}
-		<h2>Escoja una ciudad</h2>
+		<h2 class="loader">Escoja una ciudad</h2>
 	{:else}
 		{#await weatherPromise}
 			<h2 class="loader">Leyendo Datos...</h2>
