@@ -7,17 +7,18 @@ const options = {
 };
 
 
-export async function weatherData(value) {
+export async function weatherData(ciudad) {
+    const response = await fetch(
+        `https://weatherapi-com.p.rapidapi.com/current.json?q=${ciudad}`,
+        options
+    );
 
-    const response = await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${value}`, options)
-
-    const data = await response.json()
-    /*console.log(data)*/
-    const { location, current } = data
-    const { condition, feelslike_c, temp_c
-    } = current
-    const { name, region, country } = location
-    const { icon, text } = condition
+    const data = await response.json();
+    console.log(data);
+    const { location, current } = data;
+    const { condition, feelslike_c, temp_c } = current;
+    const { name, region, country } = location;
+    const { icon, text } = condition;
     return {
         src: icon,
         temperatura: temp_c,
@@ -26,5 +27,5 @@ export async function weatherData(value) {
         region: region,
         country: country,
         text: text
-    }
+    };
 }
