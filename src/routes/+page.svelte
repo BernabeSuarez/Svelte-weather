@@ -1,6 +1,12 @@
 <script>
 	import { weatherData } from '../services/weather.js';
-	const weatherPromise = weatherData();
+	export let value = 'Junin';
+	export let ciudad = value;
+	const weatherPromise = weatherData(ciudad);
+	const handleInput = (e) => (value = e.target.value);
+	$: {
+		ciudad = value;
+	}
 </script>
 
 {#await weatherPromise then weather}
@@ -23,55 +29,7 @@
 	</section>
 {/await}
 
-<style>
-	section {
-		max-width: 600px;
-		width: 80%;
-		margin: auto;
-		padding: 15px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		border: 2px solid black;
-		border-radius: 20px;
-		background: rgb(38, 58, 236);
-		background: linear-gradient(
-			180deg,
-			rgba(38, 58, 236, 1) 0%,
-			rgba(101, 114, 251, 1) 47%,
-			rgba(0, 251, 248, 1) 100%
-		);
-	}
-	.place {
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-	}
-	.temp {
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
-	}
-	h2 {
-		margin: 0 5%;
-	}
-	h4 {
-		margin: 0 5%;
-	}
-	h3 {
-		font-style: oblique;
-	}
-	.icon {
-		width: 80%;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	h1 {
-		margin-bottom: 1%;
-	}
-	h6 {
-		margin-top: 1%;
-	}
-</style>
+<h1>Ingrese Su Ciudad</h1>
+<div class="search">
+	<input placeholder="Ingresa una ciudad" {value} on:input={handleInput} />
+</div>
