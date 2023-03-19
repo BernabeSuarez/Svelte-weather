@@ -29,6 +29,8 @@
 						<h2>{weather.temperatura}°</h2>
 						<h4>Sensacion Termica</h4>
 						<h4>{weather.sensacion}°</h4>
+						<h4>Humedad:</h4>
+						<h4>{weather.humedad} %</h4>
 					</div>
 
 					<div class="icon">
@@ -52,7 +54,13 @@
 		margin-bottom: 1rem;
 		width: 6rem;
 		height: 2rem;
-		border-radius: 20px;
+		border-radius: 10px;
+		background-color: rgb(4, 146, 146);
+		color: #fafafa;
+		border: none;
+	}
+	button:hover {
+		background-color: rgb(2, 70, 70);
 	}
 	input {
 		margin-bottom: 1rem;
@@ -66,18 +74,16 @@
 		max-width: 600px;
 		width: 80%;
 		margin: auto;
-		display: flex;
 		flex-direction: column;
 		overflow: hidden;
 		align-items: center;
 		border: 2px solid black;
 		border-radius: 20px;
-		background: rgba(38, 58, 236, 0.356);
 		background: linear-gradient(
 			180deg,
-			rgba(38, 58, 236, 0.45) 0%,
-			rgba(101, 114, 251, 0.45) 47%,
-			rgba(0, 251, 248, 0.45) 100%
+			rgba(38, 58, 236, 0.6) 0%,
+			rgba(101, 114, 251, 0.6) 47%,
+			rgba(0, 251, 248, 0.6) 100%
 		);
 	}
 	.loader {
@@ -129,12 +135,40 @@
 		margin: 0% 5%;
 	}
 	h5 {
+		width: 40%;
 		margin: 0% 10%;
 		padding: 5%;
 		color: antiquewhite;
 	}
 	h6 {
+		width: 60%;
 		margin: 0 10%;
 		color: antiquewhite;
+	}
+	@media (max-width: 425px) {
+		section {
+			width: 100%;
+		}
+		button {
+			width: 30%;
+		}
+		input {
+			width: 80%;
+		}
+		.temp {
+			justify-content: center;
+		}
+		h2 {
+			font-size: 4rem;
+		}
+		h4 {
+			font-size: 0.8rem;
+		}
+		h3 {
+			font-size: 0.8rem;
+		}
+		.icon img {
+			width: 150px;
+		}
 	}
 </style>

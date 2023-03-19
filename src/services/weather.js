@@ -16,13 +16,14 @@ export async function weatherData(ciudad) {
     const data = await response.json();
     console.log(data);
     const { location, current } = data;
-    const { condition, feelslike_c, temp_c } = current;
+    const { condition, feelslike_c, temp_c, humidity } = current;
     const { name, region, country } = location;
     const { icon, text } = condition;
     return {
         src: icon,
         temperatura: temp_c,
         sensacion: feelslike_c,
+        humedad: humidity,
         ciudad: name,
         region: region,
         country: country,

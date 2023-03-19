@@ -12,7 +12,13 @@
 		align-items: center;
 	}
 	h1 {
-		color: rgb(202, 115, 0);
+		color: rgb(255, 1, 1);
 		font-size: 3rem;
+	}
+	@media (max-width: 425px) {
+		h1 {
+			font-size: 1.8rem;
+			margin-bottom: 25%;
+		}
 	}
 </style>
