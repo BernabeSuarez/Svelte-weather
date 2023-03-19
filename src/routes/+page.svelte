@@ -67,8 +67,11 @@
 		width: 30%;
 		height: 1rem;
 		padding: 1%;
-		border: 2px solid black;
-		border-radius: 20px;
+		border: none;
+		border-radius: 10px;
+	}
+	input:focus {
+		outline: none;
 	}
 	section {
 		max-width: 600px;
