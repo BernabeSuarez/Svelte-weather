@@ -154,6 +154,7 @@
 		}
 		input {
 			width: 80%;
+			height: 2.5rem;
 		}
 		.temp {
 			justify-content: center;
