@@ -52,12 +52,12 @@
 	}
 	button {
 		margin-bottom: 1rem;
-		width: 6rem;
+		width: 8rem;
 		height: 2rem;
 		border-radius: 10px;
 		background-color: rgb(4, 146, 146);
 		color: #fafafa;
-		border: none;
+		border: 1px solid white;
 	}
 	button:hover {
 		background-color: rgb(2, 70, 70);
