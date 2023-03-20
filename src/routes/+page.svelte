@@ -1,5 +1,6 @@
 <script>
 	import { weatherData } from '../services/weather';
+	import loader from '../assets/loader.gif';
 	let value = '';
 	let weatherPromise = {};
 	const handleInput = (e) => (value = e.target.value);
@@ -14,10 +15,10 @@
 	<input placeholder="Buscar ciudad" on:change={handleInput} />
 	<button on:click={renderData}>Buscar</button>
 	{#if value.length < 2}
-		<h2 class="loader">Escoja una ciudad</h2>
+		<h2 class="title">Escoja una ciudad</h2>
 	{:else}
 		{#await weatherPromise}
-			<h2 class="loader">Leyendo Datos...</h2>
+			<img class="loader" src={loader} alt="Loader" />
 		{:then weather}
 			<section>
 				<div class="place">
@@ -34,8 +35,8 @@
 					</div>
 
 					<div class="icon">
-						<h3>{weather.text}</h3>
 						<img src={weather.src} alt="Icono" />
+						<h3>{weather.text}</h3>
 					</div>
 				</div>
 			</section>
@@ -89,9 +90,11 @@
 			rgba(0, 251, 248, 0.6) 100%
 		);
 	}
-	.loader {
+	.title {
 		font-size: 2rem;
-		color: black;
+	}
+	.loader {
+		width: 100px;
 	}
 	.data {
 		display: flex;
@@ -128,11 +131,12 @@
 	.icon {
 		width: 30%;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
-		justify-content: center;
+		margin: auto;
 	}
 	.icon img {
-		width: 200px;
+		width: 100px;
 	}
 	h4 {
 		margin: 0% 5%;
@@ -172,7 +176,7 @@
 			font-size: 0.8rem;
 		}
 		.icon img {
-			width: 150px;
+			width: 80px;
 		}
 	}
 </style>
