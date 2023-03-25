@@ -17,7 +17,9 @@
 
 <body data-sveltekit-preload-data="hover">
 	<div style="display: contents">%sveltekit.body%</div>
+
 </body>
+
 <style>
 	:global {
 		margin: 0;
@@ -33,9 +35,9 @@
 		justify-content: center;
 		align-items: center;
 		background-image: linear-gradient(to right,
-			rgba(0, 0, 0, 0.5),
-			rgba(0, 0, 0, 0.5)),
-		url({img});
+				rgba(0, 0, 0, 0.5),
+				rgba(0, 0, 0, 0.5)),
+			url("assets/sv-bg.jpg");
 		background-size: cover;
 		filter: contrast(80%);
 	}
@@ -43,9 +45,9 @@
 	@media (max-width: 425px) {
 		body {
 			background-image: linear-gradient(to right,
-				rgba(0, 0, 0, 0.5),
-				rgba(0, 0, 0, 0.5)),
-			url({imgMobile});
+					rgba(0, 0, 0, 0.5),
+					rgba(0, 0, 0, 0.5)),
+				url("assets/sv-bg-mobile.jpg");
 		}
 	}
 </style>
